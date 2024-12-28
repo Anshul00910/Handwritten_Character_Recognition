@@ -5,17 +5,16 @@ import numpy as np
 import tensorflow as tf
 import json
 
-# Load the model and class labels
-model_path = 'handwritten_character_recognition_model.h5'  # Model file
+model_path = 'handwritten_character_recognition_model.h5'  
 with open('class_labels.json', 'r') as f:
     class_labels = json.load(f)
     class_labels = {int(k): v for k, v in class_labels.items()}
 
 def preprocess_image(image_path):
     img = Image.open(image_path)
-    img = img.resize((28, 28))  # Resize image as per model input size
-    img = img.convert('L')  # Convert to grayscale
-    img = np.array(img) / 255.0  # Normalize
+    img = img.resize((28, 28))  
+    img = img.convert('L') 
+    img = np.array(img) / 255.0 
     img = np.expand_dims(img, axis=0)
     img = np.expand_dims(img, axis=-1)
     return img
@@ -38,8 +37,7 @@ def upload_image():
         panel.image = img
         character = predict_character(file_path)
         result_label.config(text=f"Predicted Character: {character}")
-
-# Create the main GUI window
+        
 root = tk.Tk()
 root.title("Handwritten Character Recognition")
 root.geometry("400x300")
@@ -50,7 +48,8 @@ panel.pack(pady=10)
 upload_btn = tk.Button(root, text="Upload Image", command=upload_image)
 upload_btn.pack(pady=10)
 
-result_label = tk.Label(root, text="Predicted Character:", font=('Helvetica', 16))
+result_label = tk.Label(root, text="Predicted Character:", font=('Times New Roman', 18, 'bold'))
+
 result_label.pack(pady=20)
 
 root.mainloop()
