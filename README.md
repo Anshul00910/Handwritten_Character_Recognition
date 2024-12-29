@@ -22,7 +22,7 @@
 
 ## **Installation**
 1. Clone the repository:
-   - `git clone https://github.com/username/your-repo.git`
+   - `git clone https://github.com/Anshul00910/Handwritten_Character_Recognition.git`
    - `cd your-repo`
 
 2. Install required packages:
@@ -34,14 +34,14 @@
 
 ## **Usage**
 1. Run the script:
-   - `python HANDWRITTEN_CHAR_RECOG.py`
+   - `python app.py`
 
 2. A GUI window will appear. Upload an image of a handwritten character, and the application will display the predicted character.
 
 ---
 
 ## **File Structure**
-- `HANDWRITTEN_CHAR_RECOG.py`: Main script that runs the application and performs character recognition.
+- `app.py`: Main script that runs the application and performs character recognition.
 - `handwritten_character_recognition_model.h5`: Pre-trained model for character recognition.
 - `class_labels.json`: JSON file mapping numeric labels to character classes.
 
